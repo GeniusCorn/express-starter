@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 
+import api from './api'
+
 const app = express()
 const port = 3000
 
@@ -13,6 +15,8 @@ app.use(
     methods: ['*']
   })
 )
+
+app.use('/api', api)
 
 app.get('/', (req, res) => {
   res.send('Hello Express!')
